@@ -1,0 +1,6 @@
+# Dependências
+node_modules/
+.next/
+out/
+
+.env

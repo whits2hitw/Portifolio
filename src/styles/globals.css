@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-orbitron), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-mono), monospace;
+
+  --animation-spin-super-slow: spin 60s linear infinite;
+}
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 0.2;
+    filter: blur(100px);
+  }
+
+  50% {
+    opacity: 0.5;
+    filter: blur(130px);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+:root {
+  --neon-purple: #d946ef;
+  --neon-blue: #38bdf8;
+  --neon-cyan: #67e8f9;
+  --background: #020205;
+  --foreground: #f4f4f5;
+  --glass-bg: rgba(10, 10, 20, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@utility glass {
+  backdrop-filter: blur(12px);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+@utility neon-glow-purple {
+  text-shadow: 0 0 5px var(--neon-purple), 0 0 15px var(--neon-purple);
+}
+
+@layer utilities {
+  .bg-stars {
+    position: relative;
+    background-color: #020205;
+  }
+
+  .bg-stars::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      radial-gradient(white 1px, transparent 1px),
+      radial-gradient(white 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+p {
+  font-family: var(--font-sans);
+}
+
+.badge-text {
+  font-family: var(--font-mono);
+}
+
+.home-bg {
+  background: radial-gradient(circle at center,
+      #08081a 0%,
+      #020205 60%,
+      #000000 100%);
+  min-height: 100vh;
+  width: 100%;
+}
