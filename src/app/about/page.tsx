@@ -37,6 +37,19 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             className="md:col-span-2 space-y-6"
           >
+
+            <div className="relative w-32 h-32 mx-auto mb-6">
+
+              <div className="absolute inset-0 bg-purple-500/30 rounded-full blur-xl animate-pulse" />
+
+              <img
+                src="/images/perfil.jpg"
+                alt="Lucas Nóbrega"
+                className="relative z-10 w-full h-full rounded-full border-2 border-purple-500/50 object-cover shadow-2xl"
+              />
+
+            </div>
+
             <div className="glass p-8 border-white/5">
               <p className="text-gray-300 leading-relaxed font-sans mb-4">
                 Como um <span className="text-white font-semibold">Desenvolvedor Fullstack</span>, acredito que a melhor solução nasce da união entre uma interface impecável e um motor potente. Minha jornada é marcada pela versatilidade: de layouts responsivos e fluidos a arquiteturas de backend resilientes.
@@ -114,7 +127,7 @@ export default function AboutPage() {
               <h3 className="text-purple-400 font-display font-bold uppercase text-[10px] tracking-[0.2em] mb-3">
                 Foco Atual
               </h3>
-              <p className="text-gray-400 text-xs leading-relaxed font-sans">
+              <p className="text-gray-400 text-xs leading-relaxed font-light font-sans">
                 Especializando em arquitetura de sistemas escaláveis e construção de APIs robustas. Atualmente aprofundando em padrões de microsserviços e otimização de fluxos de dados com Node.js e Redis.
               </p>
             </div>
