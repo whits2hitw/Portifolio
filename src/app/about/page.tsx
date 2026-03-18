@@ -67,7 +67,7 @@ export default function AboutPage() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-sm uppercase tracking-tighter">Rocketseat</h4>
-                  <p className="text-gray-400 text-[10px] font-mono">Fullstack Alumnus</p>
+                  <p className="text-gray-400 text-[10px] font-mono">Fullstack</p>
                 </div>
               </div>
               <div className="glass p-6 border-white/5 flex items-center gap-4">
