@@ -55,7 +55,7 @@ export default function ProjetosPage() {
       title: "Landing Page Médica",
       description: "SPA de alta performance desenvolvida para consultório de psiquiatria. Foco em UX, acessibilidade e conversão via WhatsApp.",
       techs: ["Next.js", "React", "Tailwind", "Lucide"],
-      link: "https://dr-mario-watanabe.vercel.app/",
+      link: "https://www.drmariowatanabe.com.br/",
       repo: null 
     },
     {
