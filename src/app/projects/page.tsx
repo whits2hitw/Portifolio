@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Github, Code2 } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { ExternalLink, Github, Code2 } from "lucide-react";
 
 function ProjectCard({ title, description, techs, link, repo }: any) {
   return (
-    <motion.div 
+    <motion.div
       whileHover={{ y: -8, scale: 1.01 }}
       transition={{ type: "tween", duration: 0.2, ease: "easeOut" }}
       className="glass p-6 flex flex-col h-full border-white/5 hover:border-purple-500/40 transition-all duration-300 relative z-10"
@@ -23,24 +23,36 @@ function ProjectCard({ title, description, techs, link, repo }: any) {
       <p className="text-sm text-gray-400 leading-relaxed mb-6 flex-grow font-sans">
         {description}
       </p>
-      
+
       <div className="flex flex-wrap gap-2 mb-8">
         {techs.map((tech: string) => (
-          <span key={tech} className="text-[10px] font-mono py-1 px-2 rounded bg-white/5 border border-white/10 text-blue-400 uppercase tracking-tighter">
+          <span
+            key={tech}
+            className="text-[10px] font-mono py-1 px-2 rounded bg-white/5 border border-white/10 text-blue-400 uppercase tracking-tighter"
+          >
             {tech}
           </span>
         ))}
       </div>
 
-      {/* Botões Condicionais */}
-      <div className="flex gap-5 border-t border-white/5 pt-5"> 
+      <div className="flex gap-5 border-t border-white/5 pt-5">
         {link && link !== "#" && (
-          <a href={link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[10px] font-mono text-gray-400 hover:text-white transition-colors tracking-widest">
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[10px] font-mono text-gray-400 hover:text-white transition-colors tracking-widest"
+          >
             <ExternalLink size={14} /> VISITAR PROJETO
           </a>
         )}
         {repo && (
-          <a href={repo} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[10px] font-mono text-gray-400 hover:text-white transition-colors tracking-widest">
+          <a
+            href={repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[10px] font-mono text-gray-400 hover:text-white transition-colors tracking-widest"
+          >
             <Github size={14} /> VER CÓDIGO
           </a>
         )}
@@ -53,30 +65,47 @@ export default function ProjetosPage() {
   const meusProjetos = [
     {
       title: "Landing Page Médica",
-      description: "SPA de alta performance desenvolvida para consultório de psiquiatria. Foco em UX, acessibilidade e conversão via WhatsApp.",
+      description:
+        "SPA de alta performance desenvolvida para consultório de psiquiatria. Foco em UX, acessibilidade e conversão via WhatsApp integrada.",
       techs: ["Next.js", "React", "Tailwind", "Lucide"],
       link: "https://www.drmariowatanabe.com.br/",
-      repo: null 
+      repo: null,
     },
     {
-      title: "Task Management API",
-      description: "Backend escalável para gestão de tarefas. Inclui autenticação JWT, tratamento de erros global e arquitetura limpa.",
-      techs: ["Node.js", "TypeScript", "PostgreSQL", "Prisma"],
+      title: "NotiHub (Java Version)",
+      description:
+        "Microsserviço assíncrono para processamento escalável de notificações. Implementa um motor de agendamento em segundo plano (@Scheduled) com resiliência a falhas, transações ACID e cobertura rigorosa de testes unitários com JUnit e Mockito.",
+      techs: [
+        "Java 17",
+        "Spring Boot 3",
+        "Spring Data JPA",
+        "JUnit 5",
+        "Mockito",
+        "H2",
+      ],
       link: "#",
-      repo: "https://github.com/whits2hitw/task-manager-api"
+      repo: "https://github.com/whits2hitw/notihub-java",
     },
     {
       title: "NotiHub Service",
-      description: "Serviço de notificações assíncronas utilizando BullMQ e Redis para processamento de filas em segundo plano.",
+      description:
+        "Serviço de notificações assíncronas utilizando BullMQ e Redis para processamento distribuído de filas e workers em segundo plano.",
       techs: ["Node.js", "Redis", "BullMQ", "Docker"],
       link: "#",
-      repo: "https://github.com/whits2hitw/notihub-api"
-    }
+      repo: "https://github.com/whits2hitw/notihub-api",
+    },
+    {
+      title: "Task Management API",
+      description:
+        "Backend RESTful estruturado para gerenciamento de tarefas cotidianas. Conta com controle de autenticação JWT, tratamento global de erros e modelagem relacional via ORM.",
+      techs: ["Node.js", "TypeScript", "PostgreSQL", "Prisma"],
+      link: "#",
+      repo: "https://github.com/whits2hitw/task-manager-api",
+    },
   ];
 
   return (
     <main className="bg-stars min-h-screen pt-32 pb-20 px-6 relative overflow-hidden">
-      {/* Background Aurora - Mantido para dar cor às estrelas */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-[10%] right-[-5%] w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px]" />
